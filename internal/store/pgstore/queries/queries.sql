@@ -27,7 +27,7 @@ INSERT INTO messages ("message", "room_id")
 VALUES ($1, $2)
 RETURNING "id";
 
---name: ReactMessage :one
+-- name: ReactMessage :one
 UPDATE messages
 SET reaction_count = reaction_count + 1
 WHERE id = $1
