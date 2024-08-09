@@ -8,8 +8,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/kennedysferreira/wsrs/internal/api"
-	"github.com/kennedysferreira/wsrs/internal/store/pgstore"
+	"github.com/kennedysferreira/projectAMA/internal/api"
+	"github.com/kennedysferreira/projectAMA/internal/store/pgstore"
 
 	"github.com/jackc/pgx/v5/pgxpool"
 	"github.com/joho/godotenv"
