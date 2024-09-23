@@ -1,5 +1,4 @@
-
-![Logo](https://i.ibb.co/Kbg0VrF/AmA.png)
+![Home page](https://imgur.com/QRdFPaL.png)
 
 # Project AMA
 
