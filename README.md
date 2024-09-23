@@ -1,99 +1,136 @@
+
+![Logo](https://ibb.co/LYyk9Zn)
+
 # Project AMA
 
-Este projeto é uma aplicação de mensagens em tempo real que permite a criação de salas de discussão, envio de mensagens, reações e atualizações em tempo real via WebSocket. O projeto é dividido em duas partes: **Backend** (API) e **Frontend** (React SPA).
+This project is a real-time messaging application that allows you to create discussion rooms, send messages, reactions and updates in real time via WebSocket. The project is divided into two parts: **Backend** (API) and **Frontend** (React SPA).
+## Index
 
-## Índice
+- [Features](#features) 
+- [Requirements](#requirements) 
+- [Installation](#installation) 
+  - [Backend](#backend) 
+  - [Frontend](#frontend) 
+- [Using the API](#usingtheAPI) 
+- [WebSockets](#websockets) 
+- [Technologies](#technologies)
 
-- [Recursos](#recursos)
-- [Requisitos](#requisitos)
-- [Instalação](#instalação)
-  - [Backend](#backend)
-  - [Frontend](#frontend)
-- [Uso](#uso)
-- [Rotas da API](#rotas-da-api)
-- [WebSockets](#websockets)
-- [Tecnologias](#tecnologias)
+## Features
 
-## Recursos
+- **Creation of Rooms:** Creation and management of discussion rooms. 
+- **Realtime Messaging:** Sending and receiving messages in real time. 
+- **Reactions to Messages:** Reacting to and removing reactions from messages.
+- **Mark as Responded:** Messages can be marked as responded to.
+- Frontend in React:** SPA (Single Page Application) built with React, using React Router and React Query for state management and data caching. 
+- **Tailwind CSS:** Styling the frontend with CSS utilities. 
+- **Backend with Go:** API developed in Go with communication via WebSocket.
 
-- **Criação de Salas:** Criação e gerenciamento de salas de discussão.
-- **Mensagens em Tempo Real:** Envio e recebimento de mensagens em tempo real.
-- **Reações a Mensagens:** Reagir e remover reações de mensagens.
-- **Marcar como Respondida:** Mensagens podem ser marcadas como respondidas.
-- **Frontend em React:** SPA (Single Page Application) construída com React, utilizando React Router e React Query para gerenciamento de estado e cache de dados.
-- **Tailwind CSS:** Estilização do frontend com utilitários CSS.
-- **Backend com Go:** API desenvolvida em Go com comunicação via WebSocket.
 
-## Requisitos
 
-- **Node.js:** Versão 18 ou superior
-- **Golang:** Versão 1.22.5 ou superior
-- **PostgreSQL:** Banco de dados relacional para armazenamento de dados de salas e mensagens
+## Requirements
 
-## Instalação
+- **Node.js:** Version 18 or higher 
+- **Golang:** Version 1.22.5 or higher - **PostgreSQL:** Relational database for storing room and message data
+
+## Installation
 
 ### Backend
 
-1. Clone o repositório:
+1. Clone the repository:
 
    ```bash
    git clone https://github.com/kennedysferreira/projectAMA
    cd projectAMA/backend
-2. Instale as dependências Go:
+   ```
+2. Install the Go dependencies:
 
    ```bash
    go mod download
+   ```
 
-3. Execute o backend:
+3. Run the backend:
    
-    ```bash
+  ```bash
    go run main.go
+   ```
 
 ### Frontend
 
-1. Navegue até a pasta web:
+1. Navigate to the web folder:
 
    ```bash
    cd ../web
+   ```
 
-2. Instale as dependências do frontend:
+2. Install the frontend dependencies:
 
    ```bash
    npm install
+   ```
 
-3. Para rodar o projeto em modo de desenvolvimento, execute:
+3. To run the project in development mode, run:
 
    ```bash
    npm run dev
+   ```
 
-
-# Uso da API
+# Using the API
 
 ## Backend
 
-O servidor da API será iniciado em [http://localhost:8080](http://localhost:8080). Aqui estão alguns exemplos de uso da API:
+The API server will be started at [http://localhost:8080](http://localhost:8080). Here are some examples of using the API:
 
-### Criar uma sala
-
-    ```bash
-      curl -X POST http://localhost:8080/api/rooms -H "Content-Type: application/json" -d '{"theme": "Nova Sala"}'
-
-## Enviar uma Mensagem
-
-Para enviar uma mensagem para uma sala, você pode usar o seguinte comando curl:
-  ```bash
-    curl -X POST http://localhost:8080/api/rooms/{room_id}/messages -H "Content-Type: application/json" -d '{"message": "Olá mundo!"}'
+### Create a room
 
 
 
 
 
 
+  
+
+```bash
+  curl -X POST http://localhost:8080/api/rooms -H "Content-Type: application/json" -d '{"theme": "Nova Sala"}'
+```
+
+### Enviar uma mensagem:
+
+```bash
+  curl -X POST http://localhost:8080/api/rooms/{room_id}/messages -H "Content-Type: application/json" -d '{"message": "Olá mundo!"}'
+,.
+```
 
 
 
 
-   
+    
+## Frontend
 
- 
- 
+After starting the frontend development server (npm run dev), go to http://localhost:5173 to interact with the application interface.
+
+
+
+
+## API routes
+
+### Rooms 
+- POST /api/rooms: Creates a new room 
+- GET /api/rooms: Returns all rooms 
+- GET /api/rooms/{room_id}: Details of a room.
+
+### Messages 
+- POST /api/rooms/{room_id}/messages: Creates a new message in a room. 
+- GET /api/rooms/{room_id}/messages: Returns all the messages in a room. 
+- GET /api/rooms/{room_id}/messages/{message_id}: Details of a specific message.
+
+### Reactions and Tags
+
+- PATCH /api/rooms/{room_id}/messages/{message_id}/react: Adds a reaction to a message. 
+- DELETE /api/rooms/{room_id}/messages/{message_id}/react: Removes a reaction from a message. 
+- PATCH /api/rooms/{room_id}/messages/{message_id}/answer: Marks a message as answered.
+
+### WebSockets 
+
+The project uses WebSocket for real-time updates. Users can subscribe to a specific room to receive message updates.
+
+- GET /subscribe/{room_id}: Establishes a WebSocket connection to receive real-time updates from a room.
