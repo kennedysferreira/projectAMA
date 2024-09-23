@@ -66,18 +66,32 @@ Este projeto é uma aplicação de mensagens em tempo real que permite a criaç�
    ```bash
    npm run dev
 
-## Uso
+## **Crie seu próprio mundo virtual!** 
 
-### Backend
-O servidor da API será iniciado em http://localhost:8080. Aqui estão alguns exemplos de uso da API:
+**Já imaginou ter seu próprio cantinho online onde você e seus amigos podem conversar e se divertir?** Com esta ferramenta incrível, você pode fazer exatamente isso!
 
-**Criar uma sala:**
+### **O que você pode fazer:**
 
-```bash
-curl -X POST http://localhost:8080/api/rooms -H "Content-Type: application/json" -d {"theme": "Nova Sala"}
+* **Criar salas:** Crie espaços personalizados para diferentes temas ou grupos de amigos.
+* **Enviar mensagens:** Converse com seus amigos em tempo real e compartilhe suas ideias.
+* **Reagir às mensagens:** Mostre como você se sente com emojis divertidos.
+* **Marcar mensagens:** Destaque as mensagens importantes.
 
-**Enviar uma mensagem**
+### **Como começar:**
 
+1. **Inicie o servidor:** No seu computador, execute o comando `npm run dev` para iniciar o servidor da sua aplicação.
+2. **Acesse a aplicação:** Abra o seu navegador e digite `http://localhost:5173`.
+3. **Explore:** Comece a criar salas, enviar mensagens e se divertir!
+
+### **Por trás da magia:**
+
+* **Golang:** Uma linguagem de programação super rápida que faz tudo funcionar nos bastidores.
+* **React:** Uma ferramenta incrível para criar interfaces bonitas e interativas.
+* **WebSocket:** A tecnologia que permite que as mensagens sejam enviadas e recebidas instantaneamente.
+
+**Dica:** Use a sua criatividade para criar salas com temas divertidos, como "Games", "Livros" ou "Música"!
+
+**Gostou?** Que tal convidar seus amigos para explorar este mundo virtual com você?
 
 
 
