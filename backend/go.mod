@@ -1,4 +1,4 @@
-module github.com/kennedysferreira/projectAMA
+module github.com/kennedysferreira/projectAMA/tree/main/backend
 
 go 1.22.5
 
