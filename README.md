@@ -1,5 +1,5 @@
 
-![Logo](https://ibb.co/LYyk9Zn)
+![Logo](https://i.ibb.co/Kbg0VrF/AmA.png)
 
 # Project AMA
 
